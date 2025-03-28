@@ -18,7 +18,7 @@ dependencies:
   - conda-package-handling=1.6.0=py36h7b6447c_0
   - cryptography=2.8=py36h1ba5d50_0
   - cudatoolkit
-  - cudnn=7.6.0=cuda9.2_0
+  - cudnn
   - cupti
   - freetype=2.9.1=h8a8886c_1
   - gast=0.3.2=py_0
