@@ -123,8 +123,8 @@ if __name__ == "__main__":
     if args.wandb_key is not None:
         wandb.login(key=args.wandb_key)
         if args.run_name is not None:
-            wandb.init('rl-project', args.run_name)
+            wandb.init(project='rl-project', name=args.run_name)
         else:
-            wandb.init('rl-project')
+            wandb.init(project='rl-project')
         USE_WANDB = True
     main(args, results_dir, models_dir, args.prefix)
