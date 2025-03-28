@@ -59,7 +59,7 @@ class Trainer(object):
 		new_action, log_pi = self.actor(state)
 		alpha_loss = -self.log_alpha * (log_pi + self.target_entropy).detach().mean()
 		actor_loss = (alpha * log_pi - self.critic(state, new_action).mean(2).mean(1, keepdim=True)).mean()
-		actor_loss = (alpha * log_pi).mean()
+		# actor_loss = (alpha * log_pi).mean()
 		# --- Update ---
 		self.critic_optimizer.zero_grad()
 		critic_loss.backward()
@@ -71,10 +71,10 @@ class Trainer(object):
 		self.actor_optimizer.zero_grad()
 		actor_loss.backward()
 		self.actor_optimizer.step()
-
-		# self.alpha_optimizer.zero_grad()
-		# alpha_loss.backward()
-		# self.alpha_optimizer.step()
+		# Bug in backward above
+		self.alpha_optimizer.zero_grad()
+		alpha_loss.backward()
+		self.alpha_optimizer.step()
 
 		self.total_it += 1
 
