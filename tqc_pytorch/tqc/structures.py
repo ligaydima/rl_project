@@ -97,7 +97,7 @@ class Critic(Module):
 
     def forward(self, state, action):
         sa = torch.cat((state, action), dim=1)
-        quantiles = torch.stack(tuple(net(sa) for net in self.nets), dim=1)
+        quantiles = torch.stack(tuple(net(sa.clone()) for net in self.nets), dim=1)
         return quantiles
 
 
