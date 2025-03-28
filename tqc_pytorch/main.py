@@ -74,7 +74,8 @@ def main(args, results_dir, models_dir, prefix):
         if done or episode_timesteps >= EPISODE_LENGTH:
             # +1 to account for 0 indexing. +0 on ep_timesteps since it will increment +1 even if done=True
             print(f"Total T: {t + 1} Episode Num: {episode_num + 1} Episode T: {episode_timesteps} Reward: {episode_return:.3f}")
-            wandb.log({'reward': episode_return}, step=t + 1)
+            if USE_WANDB:
+                wandb.log({'reward': episode_return}, step=t + 1)
             # Reset environment
             state, done = env.reset()[0], False
 
@@ -86,8 +87,7 @@ def main(args, results_dir, models_dir, prefix):
         if (t + 1) % args.eval_freq == 0:
             file_name = f"{prefix}_{args.env}_{args.seed}"
             evaluations.append(eval_policy(actor, eval_env, EPISODE_LENGTH))
-            if USE_WANDB:
-                
+            
             np.save(results_dir / file_name, evaluations)
             if args.save_model: trainer.save(models_dir / file_name)
 
