@@ -13,7 +13,7 @@ dependencies:
   - intel-openmp=2020.0=166
   - jpeg=9b=h024ee3a_2
   - libedit=3.1.20181209=hc058e9b_0
-  - libffi=3.2.1=hd88cf55_4
+  - libffi
   - libgcc-ng
   - libgfortran-ng
   - libpng
