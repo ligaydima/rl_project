@@ -57,7 +57,6 @@ def main(args, results_dir, models_dir, prefix):
 
     actor.train()
     for t in range(int(args.max_timesteps)):
-        print(f"{state=}")
         action = actor.select_action(state)
         next_state, reward, done, truncated, _ = env.step(action)
         done |= truncated
