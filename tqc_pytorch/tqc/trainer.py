@@ -59,7 +59,7 @@ class Trainer(object):
 		new_action, log_pi = self.actor(state)
 		alpha_loss = -self.log_alpha * (log_pi + self.target_entropy).detach().mean()
 		actor_loss = (alpha * log_pi - self.critic(state, new_action.clone()).mean(2).mean(1, keepdim=True)).mean()
-		--- Update ---
+		# --- Update ---
 		self.critic_optimizer.zero_grad()
 		critic_loss.backward(retain_graph=True)
 		self.critic_optimizer.step()
