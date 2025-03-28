@@ -75,7 +75,6 @@ dependencies:
   - tensorflow-gpu
   - tensorflow-probability
   - pandas
-  - ray
   - tabulate
   - serializable
   - termcolor=1.1.0=py36_1
