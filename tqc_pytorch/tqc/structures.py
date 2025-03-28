@@ -3,8 +3,8 @@ import torch
 from torch.nn import Module, Linear
 from torch.distributions import Distribution, Normal
 from torch.nn.functional import relu, logsigmoid
-from gym import spaces
-import gym
+from gymnasium import spaces
+import gymnasium as gym
 
 
 from tqc import DEVICE
