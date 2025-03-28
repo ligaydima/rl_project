@@ -65,16 +65,16 @@ class Trainer(object):
 		critic_loss.backward()
 		self.critic_optimizer.step()
 
-		for param, target_param in zip(self.critic.parameters(), self.critic_target.parameters()):
-			target_param.data.copy_(self.tau * param.data + (1 - self.tau) * target_param.data)
+		# for param, target_param in zip(self.critic.parameters(), self.critic_target.parameters()):
+		# 	target_param.data.copy_(self.tau * param.data + (1 - self.tau) * target_param.data)
 
-		self.actor_optimizer.zero_grad()
-		actor_loss.backward()
-		self.actor_optimizer.step()
+		# self.actor_optimizer.zero_grad()
+		# actor_loss.backward()
+		# self.actor_optimizer.step()
 
-		self.alpha_optimizer.zero_grad()
-		alpha_loss.backward()
-		self.alpha_optimizer.step()
+		# self.alpha_optimizer.zero_grad()
+		# alpha_loss.backward()
+		# self.alpha_optimizer.step()
 
 		self.total_it += 1
 
