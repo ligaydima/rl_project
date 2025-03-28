@@ -20,6 +20,7 @@ def main(args, results_dir, models_dir, prefix):
     # --- Init ---
 
     # remove TimeLimit
+    torch.autograd.set_detect_anomaly(True)
     import os
     os.environ['MUJOCO_GL'] = 'osmesa'
     os.environ['PYOPENGL_PLATFORM'] = "osmesa"
