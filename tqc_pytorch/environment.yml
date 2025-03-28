@@ -26,9 +26,9 @@ dependencies:
   - ncurses=6.2=he6710b0_0
   - ninja=1.9.0=py36hfd86e86_0
   - numpy
-  - numpy-base=1.18.1=py36hde5b4d6_1
-  - olefile=0.46=py36_0
-  - openssl=1.1.1f=h7b6447c_0
+  - numpy-base
+  - olefile
+  - openssl
   - pillow
   - pip
   - pycparser
