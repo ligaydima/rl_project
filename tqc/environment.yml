@@ -72,7 +72,7 @@ dependencies:
   - tensorflow
   - tensorflow-base
   - tensorflow-estimator
-  - tensorflow-gpu=1.13.1=h0d30ee6_0
+  - tensorflow-gpu
   - termcolor=1.1.0=py36_1
   - tk=8.6.8=hbc83047_0
   - torchvision=0.2.1=py36_0
