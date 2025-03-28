@@ -22,6 +22,8 @@ def main(args, results_dir, models_dir, prefix):
     # remove TimeLimit
     import os
     os.environ['MUJOCO_GL'] = 'osmesa'
+    os.environ['PYOPENGL_PLATFORM'] = "osmesa"
+    os.environ['MESA_GL_VERSION_OVERRIDE'] = "3.3"
     env = gym.make(args.env).unwrapped
     eval_env = gym.make(args.env).unwrapped
 
