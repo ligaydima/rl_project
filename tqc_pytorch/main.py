@@ -5,7 +5,7 @@ import argparse
 import os
 import copy
 from pathlib import Path
-
+from tqdm import trange
 
 from tqc import structures, DEVICE
 from tqc.trainer import Trainer
@@ -56,7 +56,7 @@ def main(args, results_dir, models_dir, prefix):
     episode_num = 0
 
     actor.train()
-    for t in range(int(args.max_timesteps)):
+    for t in trange(int(args.max_timesteps)):
         action = actor.select_action(state)
         next_state, reward, done, truncated, _ = env.step(action)
         done = done | truncated
