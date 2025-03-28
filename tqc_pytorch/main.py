@@ -20,6 +20,8 @@ def main(args, results_dir, models_dir, prefix):
     # --- Init ---
 
     # remove TimeLimit
+    import os
+    os.environ['MUJOCO_GL'] = 'osmesa'
     env = gym.make(args.env).unwrapped
     eval_env = gym.make(args.env).unwrapped
 
