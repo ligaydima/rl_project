@@ -71,9 +71,9 @@ class Trainer(object):
 		actor_loss.backward()
 		self.actor_optimizer.step()
 		# Bug in backward above
-		self.alpha_optimizer.zero_grad()
-		alpha_loss.backward()
-		self.alpha_optimizer.step()
+		# self.alpha_optimizer.zero_grad()
+		# alpha_loss.backward()
+		# self.alpha_optimizer.step()
 
 		self.total_it += 1
 
