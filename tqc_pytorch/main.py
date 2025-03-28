@@ -59,7 +59,7 @@ def main(args, results_dir, models_dir, prefix):
     for t in range(int(args.max_timesteps)):
         action = actor.select_action(state)
         next_state, reward, done, truncated, _ = env.step(action)
-        done |= truncated
+        done = done | truncated
         episode_timesteps += 1
 
         replay_buffer.add(state, action, next_state, reward, done)
