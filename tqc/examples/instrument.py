@@ -224,7 +224,7 @@ def run_example_local(example_module_name, example_argv, local_mode=False):
     experiment_kwargs = generate_experiment_kwargs(variant_spec, example_args)
 
     ray.init(
-        num_cpus=example_args.cpus,
+        num_cpus=1,
         num_gpus=example_args.gpus,
         resources=example_args.resources or {},
         local_mode=local_mode,
@@ -286,7 +286,7 @@ def run_example_cluster(example_module_name, example_argv):
 
     ray.init(
         redis_address=redis_address,
-        num_cpus=example_args.cpus,
+        num_cpus=1,
         num_gpus=example_args.gpus,
         local_mode=False,
         include_webui=example_args.include_webui,
