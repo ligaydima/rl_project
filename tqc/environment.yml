@@ -73,7 +73,7 @@ dependencies:
   - tensorflow-base
   - tensorflow-estimator
   - tensorflow-gpu
-  - tensorflow-probability
+  - tensorflow-probability=0.7.0
   - pandas
   - tabulate
   - termcolor=1.1.0=py36_1
