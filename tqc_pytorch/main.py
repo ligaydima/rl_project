@@ -49,7 +49,7 @@ def main(args, results_dir, models_dir, prefix):
                       target_entropy=-np.prod(env.action_space.shape).item())
 
     evaluations = []
-    state, done = env.reset(), False
+    state, done = env.reset()[0], False
     episode_return = 0
     episode_timesteps = 0
     episode_num = 0
